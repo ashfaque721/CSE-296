@@ -1,13 +1,14 @@
 #include <stdio.h>
+#include <stdbool.h>
 
 int main()
 {
 
     char operator;
-    int n1, n2, result;
+    float n1, n2, result;
 
     printf("Enter 2 numbers and an operator: ");
-    scanf("%d %d %c", &n1, &n2, &operator);
+    scanf("%f %f %c", &n1, &n2, &operator);
 
     switch (operator)
     {
@@ -35,7 +36,7 @@ int main()
         return 1;
     }
 
-    printf("%d", result);
+    printf("%.2f", result);
 
     return 0;
 }
