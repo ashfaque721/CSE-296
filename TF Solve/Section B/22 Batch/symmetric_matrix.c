@@ -24,6 +24,12 @@ void demo(int n, int mat[n][n])
 {
     int *compressed = compressSymmetric(n, mat);
 
+    /*
+        {{0, 2},
+         {0, 2}}
+        
+    */
+
     int **reconstructed = (int **)malloc(n * sizeof(int *));
     for (int i = 0; i < n; i++)
         reconstructed[i] = (int *)malloc(n * sizeof(int));
