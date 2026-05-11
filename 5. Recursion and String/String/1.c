@@ -23,29 +23,35 @@ int main()
 
     int numReplace = 0;
 
-    int i = 0, k = 0;
+    int i = 0, j = 0, k = 0;
+
     while (i < len1)
     {
-        int j;
+        int match = 1;
+
         for (j = 0; j < len2; j++)
         {
             if (s1[i + j] != s2[j])
+            {
+                match = 0;
                 break;
+            }
         }
 
-        if (j == len2)
+        if (match && len2 > 0)
         {
-            numReplace++;
             for (int x = 0; x < len3; x++)
             {
                 result[k++] = s3[x];
             }
-
+            numReplace++;
             i += len2;
         }
-
         else
-            result[k++] = s1[i++];
+        {
+            result[k++] = s1[i];
+            i++;
+        }
     }
 
     result[k] = '\0';
